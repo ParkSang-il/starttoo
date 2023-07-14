@@ -1,0 +1,86 @@
+@charset "utf-8";
+
+//폰트
+$fontURL:'/public/font/';
+@mixin mixins-fontBasic($fontWeight,$fileName) {
+    font-family:'NanumSquare';
+    font-style:normal;
+    font-weight:$fontWeight;
+    src: 
+    url($fontURL+$fileName+'.otf');
+}
+@font-face {
+    @include mixins-fontBasic(300, 'NanumSquareL');
+}
+@font-face {
+    @include mixins-fontBasic(400, 'NanumSquareL');
+}
+@font-face {
+    @include mixins-fontBasic(500, 'NanumSquareR');
+}
+@font-face {
+    @include mixins-fontBasic(600, 'NanumSquareR');
+}
+@font-face {
+    @include mixins-fontBasic(700, 'NanumSquareB');
+}
+@font-face {
+    @include mixins-fontBasic(800, 'NanumSquareB');
+}
+@font-face {
+    @include mixins-fontBasic(900, 'NanumSquareEB');
+}
+
+
+
+/** reset **/
+* {
+  margin:0;
+  padding:0;
+  color:inherit;
+  font-family:'NanumSquare','Malgun Gothic',Dotum,'Apple Gothic',sans-serif;
+  font-size:16px;
+  box-sizing:border-box; 
+  -webkit-tap-highlight-color:transparent !important;
+}
+li{
+  list-style:none;
+}
+
+img{
+  border:none; 
+  outline:none;
+  image-rendering:-webkit-optimize-contrast;
+}
+button {
+  border:none;
+  cursor:pointer;
+  box-sizing:border-box;
+  background:transparent;
+  color:inherit;
+}
+
+a{
+  text-decoration: none;
+  color:inherit;
+}
+
+input{
+  border:0;
+  font-size:inherit;
+  color:inherit;
+  ::placeholder{
+    
+  }
+}
+.dark{
+  input::placeholder{
+    color: #505050;
+    font-weight:bold;
+  }
+}
+.light{
+  input::placeholder{
+    color:#999;
+  }
+}

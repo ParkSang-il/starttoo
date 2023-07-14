@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './layout/Header';
+import Menu from './layout/Menu';
+import Footer from "./layout/Footer";
+import List from './pages/List';
+import {useRef, useEffect} from 'react';
+
 
 function App() {
+  const widthInfo = useRef(null);
+  useEffect(() => {
+    console.log(widthInfo.current.offsetWidth);
+  })
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id="wrap" className="dark" ref={widthInfo}>
+      <Header/>
+      <Menu/>
+      <List/>
+      <Footer/>
     </div>
   );
 }
 
 export default App;
+ 

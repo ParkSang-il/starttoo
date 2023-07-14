@@ -1,0 +1,271 @@
+@charset "utf-8";
+@import '_utils.scss';
+
+
+//다크모드
+#wrap{
+    width: var(--width);
+    height: 100vh;
+    @each $theme in dark, light{
+        &.#{$theme}{
+            @include theme($theme);
+            //header
+            header{
+                .search-bar{
+                    button{
+                        background:url($img_ico+$theme+'/ico_search.png')no-repeat 0 0;
+                    }
+                }
+                .ico-btn{
+                    &.my{
+                        background:url($img_ico+$theme+'/ico_my.png')no-repeat 0 0;
+                    }
+                    &.noti{
+                        background:url($img_ico+ $theme+'/ico_noti.png')no-repeat 0 0;
+                    }
+                }
+            }
+            //메뉴
+            .menu-tatto{
+                ul li{
+                    &.arrow.bot{
+                        .tit{
+                            background: url($img_ico+$theme+'/ico_arrow_bot.png')no-repeat right center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.dark{
+        //header
+        .search-bar{
+            input{
+                background:#282828;
+            }
+        }
+        .header-btn{
+            .upload{
+                border:1px solid #6EFF71;
+                box-shadow: -6px 1px 20px rgba(219,142,253,.4);
+                transition: all 1s;
+                background-color:transparent;
+                &:hover{
+                    background-image: linear-gradient(to right, #3FD1FF,#6EFF71);
+                }
+            }
+        }
+        //메뉴
+        .menu-tatto{
+            ul li{
+                .tit{
+                    color:#c3c3c3;
+                }
+                
+            }
+        }
+        //footer
+        footer{
+            background:#1a1a1a;
+        }
+    }
+    &.light{
+        //header
+        .search-bar{
+            input{
+                border:1px solid #e1e1e1;
+                background:#f6f6f6;
+            }
+        }
+        .header-btn{
+            .upload{
+                background-image:linear-gradient(to right, #3FD1FF,#6EFF71);
+            }
+        }
+        //메뉴
+        .menu-tatto{
+            ul li{
+                .tit{
+                    color:#555;
+                }
+
+            }
+        }
+        //footer
+        footer{
+            background:#efefef;
+        }
+    }
+  } 
+
+
+//헤더
+header{
+    padding-top:24px;
+    .inner{
+        @include flexCenter;
+        padding:0 50px 0 78px;
+    }
+    .logo{
+        span{
+            display: block;
+            text-align: center;
+            margin-top: 5px;
+            font-size:12px;
+        }
+    }
+    .search-bar{
+        width:  -webkit-calc(~'100% - 90px') ;/*calcPersent(704);*/
+        position: relative;
+        margin:0 84px 0 273px;
+        input{
+            width: 100%;
+            height:80px;
+            padding-left:60px;
+            border-radius:24px;
+            font-size:24px;
+        }
+        button{
+            position: absolute;
+            top:50%;
+            left:24px;
+            transform: translateY(-50%);
+            width: 24px;
+            height:24px;
+            background-size: contain;
+        }
+    }
+    .header-btn{
+        @include flexCenter;
+        gap:40px;
+        .upload{
+            width: 330px;
+            height: 60px;
+            font-weight:bold;
+            font-size:28px;
+            border:3px solid transparent;
+            border-radius: 26px;
+            color:#fff;
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+        }
+    }
+}
+//타투메뉴
+.menu-tatto{
+    padding-top:40px;
+    ul{
+        @include flexCenter;
+        gap:36px;
+        li{
+            width: 80px;
+            &.arrow.bot{
+                a{
+                    .bg-img{
+                        background-image:none;
+                    }
+                    .tit{
+                        padding-left:5px;
+                        text-align: left;
+                    }
+                }
+            }
+            a{
+                display:block;
+                perspective: 1100px;
+                .bg-img{
+                    position: relative;
+                    display:block;
+                    width:100%;
+                    height:0;
+                    padding-top:100%;
+                    margin-bottom:8px;
+                    border-radius:30px;
+                    transform-style: preserve-3d;
+                    transition: all .4s;
+                    & > span{
+                        position:absolute;
+                        top:0;
+                        left:0;
+                        width: 100%;
+                        height:100%;
+                        border-radius:30px;
+                        backface-visibility: hidden;
+
+                        &.front{
+                            background:#282828 url(/public/img/common/img_menu.png)no-repeat 0 0;
+                            background-size:contain;
+                        }
+                        &.back{
+                            @include flexCenter;
+                            font-weight:700;
+                            background:#C548FF;
+                            transform: rotateY(180deg);
+                            color:#fff;
+                        }
+                    }
+                }
+                .tit{
+                    display:block;
+                    font-weight:700;
+                    background-image: none;
+                    text-align:center;
+                   
+                }                
+            }
+            &:hover{
+                .bg-img{
+                    transform: rotateY(180deg);
+                }
+                .tit{
+                    display:none;
+                }
+            }
+        }
+    }
+}
+
+//푸터
+footer{
+   .inner{
+        @include flexBetween;
+        padding:22px 50px;
+        ul{
+            @include flexBetween;
+            gap:30px;
+            &.txt{
+                li{
+                    a{ 
+                        font-size:20px;
+                        color:#7a7a7a;
+                        font-weight:bold;
+                    }
+                    &:last-child{
+                        color:#bcbcbc;
+                        margin-left:30px;
+                    }
+                }
+                
+            }
+            &.ico{
+                li{
+                    a{
+                        display:block;
+                        width:35px;
+                        height:35px;
+                        background-size:contain;
+                        &.facebook{
+                            background:url(/public/img/ico/ico_facebook.png)no-repeat 0 0;
+                        }
+                        &.twitter{
+                            background:url(/public/img/ico/ico_twitter.png)no-repeat 0 0;
+                        }
+                        &.instargram{
+                            background:url(/public/img/ico/ico_instagram.png)no-repeat 0 0;
+                        }
+                    }
+                }
+            }
+        }
+   }
+}

@@ -1,0 +1,92 @@
+@charset "utf-8";
+:root{
+    --width : 100vw;
+}
+
+//이미지 경로
+$img_ico:'/public/img/ico/';
+
+//flex 가로 간격 세로 중앙정렬
+@mixin flexBetween{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+//flex 가로 세로 중앙정렬
+@mixin flexCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//flex 가로왼쪽 세로 중앙정렬
+@mixin flexStart{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+
+//숨김
+@mixin hidden{
+    position:absolute !important; 
+    width:1px !important; 
+    height:1px !important; 
+    clip:rect(0 0 0 0) !important; 
+    overflow:hidden !important; 
+    border:0 !important; 
+    padding:0 !important; 
+    margin:-1px !important;
+}
+
+//다크모드
+$font-color: var(--font-color);
+$highlight-color: var(--highlight-color);
+$bg-color: var(--bg-color);
+
+$config:(
+    dark : (
+        font:#fff,
+        highlight:#CB5BFF,
+        bg:#222
+    ),
+    light:(
+        font:#333,
+        highlight:#CB5BFF,
+        bg:#fff
+    )
+);
+
+@function setStyle($map,$object,$style){
+    @if map-has-key($map,$object){
+        @return map-get(map-get($map,$object),$style);
+    }
+    @warn "the key ´#{$object} is not available in the map.";
+    @return null;
+}
+
+@mixin theme($key){
+    color: #{setStyle($config,$key,font)};
+    background-color:#{setStyle($config,$key,bg)};
+}
+
+
+//태블릿
+@mixin MediaTablet {
+    @media (max-width:1025px) {
+      @content;  
+    }
+  }
+  
+//모바일
+@mixin MediaMobile {
+    @media (max-width:768px) {
+        @content;  
+    }
+}
+
+//계산식
+@function calcPersent($px) {
+    @return (calc($px / 2580)) * 100;
+}

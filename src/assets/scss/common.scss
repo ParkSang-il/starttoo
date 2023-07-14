@@ -1,0 +1,22 @@
+@charset "utf-8";
+@import '_utils.scss';
+
+/*$theme == dark,light*/
+
+//공통
+.inner{
+    width: 100%;
+    margin:0 auto;
+    max-width: 1920px;
+}
+
+//아이콘버튼
+.ico-btn{
+    width: 40px;
+    height: 40px;
+}
+
+//숨김
+.hidden{
+    @include hidden;
+}

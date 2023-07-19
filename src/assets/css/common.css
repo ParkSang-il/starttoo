@@ -1,6 +1,8 @@
+/*$theme == dark,light*/
 :root {
   --width: 100vw;
-} /*$theme == dark,light*/
+}
+
 .inner {
   width: 100%;
   margin: 0 auto;

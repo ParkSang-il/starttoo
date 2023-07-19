@@ -13,7 +13,7 @@ export default function Header() {
                 <button type="button" value="검색"></button>
             </div>
             <div className="header-btn">
-                <button type="button" className="upload">Upload Your Tatoo</button>
+                <button type="button" className="upload"><span>+ Upload <strong>TATTO</strong></span></button>
                 <button type="button" className="ico-btn noti" value="알림"></button>
                 <button type="button" className="ico-btn my" value="마이페이지"></button>
             </div>

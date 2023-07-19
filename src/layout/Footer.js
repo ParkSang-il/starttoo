@@ -3,6 +3,7 @@ export default function Footer() {
   return (
     <footer>
         <div className="inner">
+            <p> © 2023 Startoo. All rights reserved</p>
             <ul className='txt'>
                 <li>
                     <a href="#;">스타투 소개</a>
@@ -12,9 +13,6 @@ export default function Footer() {
                 </li>
                 <li>
                     <a href="#;">설정</a>
-                </li>
-                <li>
-                    © 2023 Startoo. All rights reserved
                 </li>
             </ul>
             <ul className='ico'>

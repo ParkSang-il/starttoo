@@ -1,3 +1,107 @@
-.content{
-    background:red;
+@charset "utf-8";
+@import '_utils.scss';
+
+
+.list-menu{
+    @include flexBetween;
+    padding:25px 0;
+    .list-btn{
+        @include flexStart;
+        button{
+            position: relative;
+            padding:0 15px;
+            font-size:22px;
+            font-weight:bold;
+            &.on,
+            &:hover{
+                color:#6EFF71;
+            }
+            &::before{
+                content:"";
+                position: absolute;
+                top: 50%;
+                left:0;
+                transform: translateY(-50%);
+                width: 1px;
+                height: calc(100% - 10px);
+                background:#555;
+            }
+            &:first-child{
+                &::before{
+                    display: none;
+                }
+            }
+        }
+
+        &.round-btn{
+            button{
+                min-width:100px;
+                padding:10.5px 24px;
+                margin-right:15px;
+                border-radius:25px;
+                border:2px solid #fff;
+                color:#fff;
+                font-size:24px;
+                &::before{
+                    display: none;
+                }
+
+                &:hover,
+                &.on{
+                    border-color:#6EFF71;
+                    color:#6EFF71;
+                }
+            }
+        }
+        
+    }
+}
+
+.img-list{
+    ul{
+        display: grid;
+        gap: 15px;
+        grid-template-columns: repeat(auto-fit,minmax(310px,1fr));
+        grid-template-rows: auto;
+
+        li{
+            flex-grow:1;
+            div{
+                cursor: pointer;
+            }
+            .img-box{
+                img{
+                    width: 100%;
+                }
+            }
+            .txt-box{
+                strong{
+                    display: block;
+                    width: 73%;
+                    margin-bottom:5px;
+                   @include textOverflow;
+                }
+                div{
+                    @include flexBetween;
+                    span{
+                        display: block;
+                        width: 45%;
+                        padding-left:28px;
+                        font-size:14px;
+                        @include textOverflow;
+                        background:url($img_ico + 'ico_myname.png')no-repeat 0 -1px;
+                        background-size:20px;
+                    }
+                    button{
+                        display: block;
+                        padding-left:31px;
+                        line-height:24px;
+                        color:#6EFF71;
+                        font-size:14px;
+                        background:url($img_ico + 'ico_heart.png')no-repeat 0 center;
+                    }
+                }
+            }
+        }
+    }
 }

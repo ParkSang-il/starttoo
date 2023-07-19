@@ -4,8 +4,11 @@
 
 //다크모드
 #wrap{
-    width: var(--width);
-    height: 100vh;
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height:100vh;
+    padding-bottom:79px;
     @each $theme in dark, light{
         &.#{$theme}{
             @include theme($theme);
@@ -44,17 +47,6 @@
                 background:#282828;
             }
         }
-        .header-btn{
-            .upload{
-                border:1px solid #6EFF71;
-                box-shadow: -6px 1px 20px rgba(219,142,253,.4);
-                transition: all 1s;
-                background-color:transparent;
-                &:hover{
-                    background-image: linear-gradient(to right, #3FD1FF,#6EFF71);
-                }
-            }
-        }
         //메뉴
         .menu-tatto{
             ul li{
@@ -75,11 +67,6 @@
             input{
                 border:1px solid #e1e1e1;
                 background:#f6f6f6;
-            }
-        }
-        .header-btn{
-            .upload{
-                background-image:linear-gradient(to right, #3FD1FF,#6EFF71);
             }
         }
         //메뉴
@@ -115,7 +102,7 @@ header{
         }
     }
     .search-bar{
-        width:  -webkit-calc(~'100% - 90px') ;/*calcPersent(704);*/
+        width:  704px ;
         position: relative;
         margin:0 84px 0 273px;
         input{
@@ -139,15 +126,28 @@ header{
         @include flexCenter;
         gap:40px;
         .upload{
-            width: 330px;
+            width:280px;
             height: 60px;
-            font-weight:bold;
-            font-size:28px;
-            border:3px solid transparent;
+            border:2px solid transparent;
             border-radius: 26px;
-            color:#fff;
+            background-color:transparent;
+            background-image: linear-gradient(#222, #222), 
+            linear-gradient(to right, #6EFF71 ,  #3FD1FD);
             background-origin: border-box;
             background-clip: content-box, border-box;
+            span
+            {   
+                font-weight:900;
+                font-size:26px;
+                color: transparent;
+                letter-spacing: -1px;
+                background: linear-gradient(to right, #6CFD75 , #41D3F8 );
+                background-clip: text;
+                strong{
+                    font-weight:900;
+                    font-size:28px;
+                }
+            }
         }
     }
 }
@@ -199,9 +199,9 @@ header{
                         &.back{
                             @include flexCenter;
                             font-weight:700;
-                            background:#C548FF;
+                            background:#6EFF71;
                             transform: rotateY(180deg);
-                            color:#fff;
+                            color:#111;
                         }
                     }
                 }
@@ -227,9 +227,16 @@ header{
 
 //푸터
 footer{
+    position: absolute;
+    bottom: 0;
+    left:0;
+    width: 100%;
    .inner{
         @include flexBetween;
         padding:22px 50px;
+        p{
+            color:#bcbcbc;
+        }
         ul{
             @include flexBetween;
             gap:30px;
@@ -240,12 +247,7 @@ footer{
                         color:#7a7a7a;
                         font-weight:bold;
                     }
-                    &:last-child{
-                        color:#bcbcbc;
-                        margin-left:30px;
-                    }
                 }
-                
             }
             &.ico{
                 li{
@@ -255,13 +257,13 @@ footer{
                         height:35px;
                         background-size:contain;
                         &.facebook{
-                            background:url(/public/img/ico/ico_facebook.png)no-repeat 0 0;
+                            background:url($img_ico + 'ico_facebook.png')no-repeat 0 0;
                         }
                         &.twitter{
-                            background:url(/public/img/ico/ico_twitter.png)no-repeat 0 0;
+                            background:url($img_ico + 'ico_twitter.png')no-repeat 0 0;
                         }
                         &.instargram{
-                            background:url(/public/img/ico/ico_instagram.png)no-repeat 0 0;
+                            background:url($img_ico + 'ico_instagram.png')no-repeat 0 0;
                         }
                     }
                 }

@@ -37,7 +37,55 @@
                         }
                     }
                 }
+                .menu-btn button{
+                    &.menu{
+                        background:url($img_ico+$theme+'/ico_menu.png')no-repeat right center;
+                    }
+                    &.notice{
+                        background:url($img_ico+ $theme+'/ico_noti.png')no-repeat 0 0;
+                    }
+                }
             }
+
+            //리스트
+            .img-list{
+               .txt-box{
+                div{
+                    span{
+                        background:url($img_ico+ $theme+'/ico_myname.png')no-repeat 0 -1px;
+                    }
+                    button{
+                        background:url($img_ico+'/ico_heart_off.png')no-repeat 0 0;
+                        background-size:contain;
+                    }
+                    button.on{
+                        background:url($img_ico+ $theme+'/ico_heart.png')no-repeat 0 0;
+                    }
+                }
+               }
+            }
+
+            //푸터
+            footer{
+                .inner{
+                    &.mobile-footer{
+                        button{
+                            &.home{
+                                background:url($img_ico+ $theme+'/ico_home.png')no-repeat 0 0;
+                            }
+                            &.menu{
+                                background:url($img_ico+ $theme+'/ico_homeBtn.png')no-repeat 0 0;
+                            }
+                            &.my{
+                                background:url($img_ico+ $theme+'/ico_my.png')no-repeat 0 0;
+                            }
+                        }
+                    }
+                }
+            }
+
+
+
         }
     }
     &.dark{
@@ -47,13 +95,17 @@
                 background:#282828;
             }
         }
+        .header-btn{
+            .upload{
+                background-image: linear-gradient(#222, #222), linear-gradient(to right, #6EFF71, #3FD1FD);
+            }
+        }
         //메뉴
         .menu-tatto{
             ul li{
                 .tit{
                     color:#c3c3c3;
                 }
-                
             }
         }
         //footer
@@ -69,13 +121,17 @@
                 background:#f6f6f6;
             }
         }
+        .header-btn{
+            .upload{
+                background-image: linear-gradient(#fff, #fff), linear-gradient(to right, #6EFF71, #3FD1FD);
+            }
+        }
         //메뉴
         .menu-tatto{
             ul li{
                 .tit{
                     color:#555;
                 }
-
             }
         }
         //footer
@@ -90,8 +146,8 @@
 header{
     padding-top:24px;
     .inner{
-        @include flexCenter;
-        padding:0 50px 0 78px;
+        @include flexBetween;
+        //padding:0 50px 0 78px;
     }
     .logo{
         span{
@@ -104,13 +160,14 @@ header{
     .search-bar{
         width:  704px ;
         position: relative;
-        margin:0 84px 0 273px;
+        margin:0 3%;
         input{
             width: 100%;
-            height:80px;
+            height:70px;
             padding-left:60px;
-            border-radius:24px;
-            font-size:24px;
+            border-radius:35px;
+            font-size:1.5em;
+            border:1px solid #444;
         }
         button{
             position: absolute;
@@ -131,21 +188,19 @@ header{
             border:2px solid transparent;
             border-radius: 26px;
             background-color:transparent;
-            background-image: linear-gradient(#222, #222), 
-            linear-gradient(to right, #6EFF71 ,  #3FD1FD);
             background-origin: border-box;
             background-clip: content-box, border-box;
             span
             {   
                 font-weight:900;
-                font-size:26px;
+                font-size:1.625em;
                 color: transparent;
                 letter-spacing: -1px;
                 background: linear-gradient(to right, #6CFD75 , #41D3F8 );
                 background-clip: text;
                 strong{
                     font-weight:900;
-                    font-size:28px;
+                    font-size:1.750rem;
                 }
             }
         }
@@ -154,6 +209,9 @@ header{
 //타투메뉴
 .menu-tatto{
     padding-top:40px;
+    .menu-btn{
+        display: none;
+    }
     ul{
         @include flexCenter;
         gap:36px;
@@ -236,6 +294,7 @@ footer{
         padding:22px 50px;
         p{
             color:#bcbcbc;
+            font-size:1em;
         }
         ul{
             @include flexBetween;
@@ -243,7 +302,7 @@ footer{
             &.txt{
                 li{
                     a{ 
-                        font-size:20px;
+                        font-size:1.250em;
                         color:#7a7a7a;
                         font-weight:bold;
                     }
@@ -269,5 +328,132 @@ footer{
                 }
             }
         }
+
+        &.mobile-footer{
+            display: none;
+        }
    }
 }
+
+
+@include MediaTablet{
+    header{
+        padding:3% 0;
+        .logo{
+            width: 30%;
+            min-width:130px;
+            img{
+                width: 100%;
+            }
+            span{
+                display: none;
+            }
+        }
+        .header-btn{
+            display: none;
+        }
+        .search-bar{
+            margin:0 0 0 3%;
+            input{
+                height:50px;
+                font-size:1.286em;
+            }
+        }
+    }
+
+    .menu-tatto{
+        overflow:scroll;
+        @include flexBetween;
+        padding:3% 3% 3% 140px;
+        background:#333;
+        .menu-btn{
+           position: absolute;
+           left:0;
+           display: block;
+           padding-left:3%;
+           z-index: 2;
+           background:#333;
+            button{
+               width:40px;
+               height:40px;
+               text-indent:-99999px;
+            }
+        }
+        ul{
+            gap: 15px;
+            li{
+                width: 80px;
+                a{
+                    .bg-img{
+                        display: none;
+                    }
+                    .tit{
+                        padding: 10px 6px;
+                        border-radius:10px;
+                        color: #111 !important;
+                        background:#6eff71;
+                    }
+                    &:hover{
+                        .tit{
+                            display: block;
+                        }
+                    }
+                }
+
+                &.arrow{
+                    border-radius:10px;
+                    background-color:#6eff71;
+                }
+            }
+        }
+    }
+
+    footer{
+        position: fixed;
+        bottom:0;
+        left:0;
+
+        .inner{
+            padding:3%;
+            &.pc-footer{
+                display: none;
+            }
+            &.mobile-footer{
+                @include flexCenter;
+                gap:20%;
+                button{
+                    width: 4vw;
+                    height: 4vw;
+                    min-width:32px;
+                    min-height:32px;
+                    text-indent:-99999px;
+                    background-size:contain !important;
+
+                    &.menu{
+                      width:5vw;
+                      height:5vw;
+                      min-width:40px;
+                      min-height:40px;
+                    }
+                    
+                }
+            }
+        }
+    }
+}
+
+@include MediaMobile{
+    .menu-tatto{
+        padding:3% 3% 3% 90px;
+        .menu-btn{
+            button{
+                width: 30px;
+                height:30px;
+                background-size:contain !important;
+            }
+        }
+    }
+  
+}
+
+

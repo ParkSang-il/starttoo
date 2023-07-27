@@ -2,7 +2,7 @@ import React from 'react'
 export default function Footer() {
   return (
     <footer>
-        <div className="inner">
+        <div className="inner pc-footer">
             <p> © 2023 Startoo. All rights reserved</p>
             <ul className='txt'>
                 <li>
@@ -26,6 +26,11 @@ export default function Footer() {
                     <a href="#;" className='instargram'><span className='hidden'>instargram</span></a>
                 </li>
             </ul>
+        </div>
+        <div className="inner mobile-footer">
+            <button className='home'>home</button>
+            <button className='menu'>menu</button>
+            <button className='my'>my</button>
         </div>
     </footer>
   )

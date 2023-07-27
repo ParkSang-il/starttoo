@@ -121,3 +121,9 @@ input {
 .light input::placeholder {
   color: #999;
 }
+
+@media (max-width: 768px) {
+  * {
+    font-size: 14px;
+  }
+}

@@ -2,7 +2,11 @@ import React from 'react'
 
 export default function Menu() {
   return (
-    <section className="menu-tatto">
+    <section className="menu-tatto"> 
+        <div className="menu-btn">
+            <button type="button" className='notice'>알림</button>
+            <button type="button" className='menu'>메뉴</button>
+        </div>
         <ul>
             <li className="arrow bot">
                 <a href="#;">

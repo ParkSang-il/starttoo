@@ -1,11 +1,15 @@
 
-import React,{useState} from 'react';
+import React,{useState, useRef} from 'react';
 import '../assets/css/list.css'
 import listData from '../db/list'
+import ModalView from './ModalView';
+
 
 export default function List() {
-    
     const [idx, setIdx] = useState(0);
+    const [like, unlike] = useState(false);
+    const listView = useRef();
+
     const menuArr =[
         {name:'추천', con:'recommendList',key:1},
         {name:'팔로잉', con:'followerList',key:2},
@@ -14,16 +18,24 @@ export default function List() {
         setIdx(index);
     };
 
+    const likeClick = () =>{
+        unlike(!like);
+    }
+    const listName = menuArr[idx].con;
+
+
     //추천게시글
     const recommendList = listData.recommendList.map((item) => {
         return (
-          <li key={item.id}>
+          <li key={item.id} ref={listView}>
             <div className='img-box'><img src={item.img} alt="" /></div>
             <div className='txt-box'>
                 <strong>{item.tit}</strong>
                 <div>
                     <span>{item.name}</span>
-                    <button type='button'>{item.like}</button>
+                    <button type='button' className={like ? 'on':''}
+                       onClick={likeClick}
+                    >{like ? item.like + 1 : item.like}</button>
                 </div>
             </div>
           </li>
@@ -45,6 +57,7 @@ export default function List() {
         );
     });
 
+  
     return (
         <section className='content'>
             <div className='inner'>
@@ -69,10 +82,13 @@ export default function List() {
                 </div>
                 <div className='img-list'>
                     <ul>
-                       {menuArr[idx].con === 'recommendList' ? recommendList :followerList }
+                       {menuArr[idx].con === 'recommendList' ? recommendList :followerList}
                     </ul>
                 </div>
             </div>
+            {/*<ModalView/>*/}
         </section>
     );
+
+    
 }

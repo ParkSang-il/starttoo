@@ -98,6 +98,12 @@
                     }
                 }
             }
+            &.none-list{
+                @include flexCenter;
+                height:58vh;
+                font-size:3em;
+                font-weight:bold;
+            }
         }
     }
 }
@@ -115,6 +121,13 @@
                     font-size:1.141em;
                 }
               
+            }
+        }
+    }
+    .img-list{
+        ul{
+            li.none-list{
+                height:64vh;
             }
         }
     }

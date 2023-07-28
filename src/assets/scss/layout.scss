@@ -369,7 +369,8 @@ footer{
         .menu-btn{
            position: absolute;
            left:0;
-           display: block;
+           @include flexCenter;
+           height:60px;
            padding-left:3%;
            z-index: 2;
            background:#333;

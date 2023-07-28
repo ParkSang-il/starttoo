@@ -114,6 +114,20 @@
   line-height: 24px;
   font-size: 0.875em;
 }
+.img-list ul li.none-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 58vh;
+  font-size: 3em;
+  font-weight: bold;
+}
 
 @media (max-width: 1080px) {
   .list-menu .list-btn button {
@@ -123,6 +137,9 @@
     min-width: 70px;
     padding: 7px 20px;
     font-size: 1.141em;
+  }
+  .img-list ul li.none-list {
+    height: 64vh;
   }
 }
 .view-layer-wrap {

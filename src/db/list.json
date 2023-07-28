@@ -59,47 +59,6 @@
 
     ],
     "followerList" : [
-      {
-        "id": 1,
-        "img":"/img/main/img_list.png",
-        "tit": "팔로잉게시글 이름 최대 글자수는 딱 이정도1",
-        "name": "사용자 이름의 최대글자1",
-        "like": 0
-      },
-      {
-        "id": 2,
-        "img":"/img/main/img_list.png",
-        "tit": "팔로잉게시글 이름 최대 글자수는 딱 이정도2",
-        "name": "사용자 이름의 최대글자2",
-        "like": 999
-      },
-      {
-        "id": 3,
-        "img":"/img/main/img_list.png",
-        "tit": "팔로잉게시글 이름 최대 글자수는 딱 이정도3",
-        "name": "사용자 이름의 최대글자3",
-        "like": 999
-      },
-      {
-        "id": 4,
-        "img":"/img/main/img_list.png",
-        "tit": "팔로잉게시글 이름 최대 글자수는 딱 이정도4",
-        "name": "사용자 이름의 최대글자4",
-        "like": 999
-      },
-      {
-        "id": 5,
-        "img":"/img/main/img_list.png",
-        "tit": "팔로잉게시글 이름 최대 글자수는 딱 이정도5",
-        "name": "사용자 이름의 최대글자5",
-        "like": 999
-      },
-      {
-        "id": 6,
-        "img":"/img/main/img_list.png",
-        "tit": "팔로잉게시글 이름 최대 글자수는 딱 이정도6",
-        "name": "사용자 이름의 최대글자6",
-        "like": 999
-      }
+      
     ]
   }

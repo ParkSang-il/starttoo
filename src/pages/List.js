@@ -6,9 +6,10 @@ import ModalView from './ModalView';
 
 
 export default function List() {
-    const [idx, setIdx] = useState(0);
-    const [like, unlike] = useState(false);
-    const listView = useRef();
+    const [idx, setIdx] = useState(0);  //메뉴
+    const [like, unlike] = useState(false); // 좋아요
+    const listView = useRef(); // 테스트
+    var followerList;
 
     const menuArr =[
         {name:'추천', con:'recommendList',key:1},
@@ -21,7 +22,6 @@ export default function List() {
     const likeClick = () =>{
         unlike(!like);
     }
-    const listName = menuArr[idx].con;
 
 
     //추천게시글
@@ -41,23 +41,31 @@ export default function List() {
           </li>
         );
     });
-    //팔로워게시글
-    const followerList = listData.followerList.map((item) => {
+    
+    //팔로잉게시글
+    const follower = listData.followerList.map((item) => {
         return (
-          <li key={item.id}>
-            <div className='img-box'><img src={item.img} alt="" /></div>
-            <div className='txt-box'>
-                <strong>{item.tit}</strong>
-                <div>
-                    <span>{item.name}</span>
-                    <button type='button'>{item.like}</button>
+            <li key={item.id}>
+                <div className='img-box'><img src={item.img} alt="" /></div>
+                <div className='txt-box'>
+                    <strong>{item.tit}</strong>
+                    <div>
+                        <span>{item.name}</span>
+                        <button type='button'>{item.like}</button>
+                    </div>
                 </div>
-            </div>
-          </li>
+            </li>
         );
     });
 
-  
+    //팔로잉 게시글 없을때
+    const followerNone = <li className="none-list">아직 팔로잉 한 사람이 없어요</li>;
+    if(listData.followerList.length === 0){
+        followerList = followerNone;
+    }else{
+        followerList = follower;
+    }
+
     return (
         <section className='content'>
             <div className='inner'>
@@ -82,7 +90,7 @@ export default function List() {
                 </div>
                 <div className='img-list'>
                     <ul>
-                       {menuArr[idx].con === 'recommendList' ? recommendList :followerList}
+                        {menuArr[idx].con === 'recommendList' ? recommendList : followerList}
                     </ul>
                 </div>
             </div>

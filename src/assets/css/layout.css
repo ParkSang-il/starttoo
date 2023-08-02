@@ -1,3 +1,4 @@
+@charset "UTF-8";
 #wrap {
   position: relative;
   width: 100%;
@@ -27,15 +28,26 @@
 #wrap.dark .menu-tatto .menu-btn button.notice {
   background: url("/public/img/ico/dark/ico_noti.png") no-repeat 0 0;
 }
-#wrap.dark .img-list .txt-box div span {
-  background: url("/public/img/ico/dark/ico_myname.png") no-repeat 0 -1px;
+#wrap.dark .img-list .tit-box strong {
+  background-image: url("/public/img/ico/dark/ico_myname.png");
 }
-#wrap.dark .img-list .txt-box div button {
-  background: url("/public/img/ico//ico_heart_off.png") no-repeat 0 0;
-  background-size: contain;
+#wrap.dark .img-list .tit-box .tit-btn button.tit-menu {
+  background-image: url("/public/img/ico/dark/ico_more.png");
 }
-#wrap.dark .img-list .txt-box div button.on {
-  background: url("/public/img/ico/dark/ico_heart.png") no-repeat 0 0;
+#wrap.dark .img-list .btn-box-wrap .btn-box button.like {
+  background-image: url("/public/img/ico//ico_heart_off.png");
+}
+#wrap.dark .img-list .btn-box-wrap .btn-box button.like.on {
+  background-image: url("/public/img/ico/dark/ico_heart.png");
+}
+#wrap.dark .img-list .btn-box-wrap .btn-box button.review {
+  background-image: url("/public/img/ico/dark/ico_message.png");
+}
+#wrap.dark .img-list .btn-box-wrap .btn-box button.share {
+  background-image: url("/public/img/ico/dark/ico_share.png");
+}
+#wrap.dark .img-list .btn-box-wrap .btn-box button.favorite {
+  background-image: url("/public/img/ico/dark/ico_favorites.png");
 }
 #wrap.dark footer .inner.mobile-footer button.home {
   background: url("/public/img/ico/dark/ico_home.png") no-repeat 0 0;
@@ -68,15 +80,26 @@
 #wrap.light .menu-tatto .menu-btn button.notice {
   background: url("/public/img/ico/light/ico_noti.png") no-repeat 0 0;
 }
-#wrap.light .img-list .txt-box div span {
-  background: url("/public/img/ico/light/ico_myname.png") no-repeat 0 -1px;
+#wrap.light .img-list .tit-box strong {
+  background-image: url("/public/img/ico/light/ico_myname.png");
 }
-#wrap.light .img-list .txt-box div button {
-  background: url("/public/img/ico//ico_heart_off.png") no-repeat 0 0;
-  background-size: contain;
+#wrap.light .img-list .tit-box .tit-btn button.tit-menu {
+  background-image: url("/public/img/ico/light/ico_more.png");
 }
-#wrap.light .img-list .txt-box div button.on {
-  background: url("/public/img/ico/light/ico_heart.png") no-repeat 0 0;
+#wrap.light .img-list .btn-box-wrap .btn-box button.like {
+  background-image: url("/public/img/ico//ico_heart_off.png");
+}
+#wrap.light .img-list .btn-box-wrap .btn-box button.like.on {
+  background-image: url("/public/img/ico/light/ico_heart.png");
+}
+#wrap.light .img-list .btn-box-wrap .btn-box button.review {
+  background-image: url("/public/img/ico/light/ico_message.png");
+}
+#wrap.light .img-list .btn-box-wrap .btn-box button.share {
+  background-image: url("/public/img/ico/light/ico_share.png");
+}
+#wrap.light .img-list .btn-box-wrap .btn-box button.favorite {
+  background-image: url("/public/img/ico/light/ico_favorites.png");
 }
 #wrap.light footer .inner.mobile-footer button.home {
   background: url("/public/img/ico/light/ico_home.png") no-repeat 0 0;
@@ -86,6 +109,19 @@
 }
 #wrap.light footer .inner.mobile-footer button.my {
   background: url("/public/img/ico/light/ico_my.png") no-repeat 0 0;
+}
+#wrap.dark {
+  /*//리스트
+  .list-menu{
+      .list-btn{
+          button{
+              &.on,
+              &:hover{
+                  color:#fff;
+              }
+          }
+      }
+  }*/
 }
 #wrap.dark .search-bar input {
   background: #282828;
@@ -99,6 +135,20 @@
 }
 #wrap.dark footer {
   background: #1a1a1a;
+}
+#wrap.light {
+  /*  //리스트
+    .list-menu{
+        .list-btn{
+            button{
+                &.on,
+                &:hover{
+                    color:#6EFF71;
+                    font-weight:bold;
+                }
+            }
+        }
+    }*/
 }
 #wrap.light .search-bar input {
   border: 1px solid #e1e1e1;
@@ -472,4 +522,50 @@ footer .inner.mobile-footer {
     height: 30px;
     background-size: contain !important;
   }
+}
+.view-layer-wrap.login .con {
+  padding: 3%;
+  border-radius: 20px;
+  text-align: center;
+  background: #333;
+}
+.view-layer-wrap.login .con h2 img {
+  width: 16em;
+}
+.view-layer-wrap.login .con h2 span {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+  color: #ccc;
+}
+.view-layer-wrap.login .con .login-list {
+  padding-top: 100px;
+}
+.view-layer-wrap.login .con .login-list ul li {
+  min-width: 300px;
+  width: 100%;
+  height: 52px;
+  margin: 0 auto 13px;
+}
+.view-layer-wrap.login .con .login-list ul li a {
+  display: block;
+  line-height: 52px;
+  border-radius: 25px;
+  color: #fff;
+  font-weight: 700;
+}
+.view-layer-wrap.login .con .login-list ul li a.gogle {
+  border: 1px solid #d9d9d9;
+  line-height: 50px;
+  background: url("/public/img/ico/ico_gogle.png") no-repeat 30px center;
+}
+.view-layer-wrap.login .con .login-list ul li a.kakao {
+  color: #444;
+  background: #FFEA12 url("/public/img/ico/ico_kakao.png") no-repeat 30px center;
+}
+.view-layer-wrap.login .con .login-list ul li a.facebook {
+  background: #1877F2 url("/public/img/ico/ico_face.png") no-repeat 30px center;
+}
+.view-layer-wrap.login .con .login-list ul li a.naver {
+  background: #00C73C url("/public/img/ico/ico_naver.png") no-repeat 30px center;
 }

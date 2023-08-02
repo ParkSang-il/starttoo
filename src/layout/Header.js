@@ -1,6 +1,9 @@
-import React from 'react'
+import {useState} from 'react'
 
-export default function Header() {
+export default function Header(props) {
+    function layerOpen(){
+        props.notLogin(!props.login);
+    }
   return (
     <header>
         <div className="inner">
@@ -15,7 +18,7 @@ export default function Header() {
             <div className="header-btn">
                 <button type="button" className="upload"><span>+ Upload <strong>TATTO</strong></span></button>
                 <button type="button" className="ico-btn noti" value="알림"></button>
-                <button type="button" className="ico-btn my" value="마이페이지"></button>
+                <button type="button" className="ico-btn my" value="마이페이지" onClick={layerOpen}></button>
             </div>
         </div>
     </header>

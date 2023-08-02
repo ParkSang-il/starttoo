@@ -1,0 +1,69 @@
+{
+    "recommendList": [
+      {
+        "id": 1,
+        "img":"/img/main/img_list.png",
+        "txt": "추천게시글 이름 최대 글자수는 딱 이정도추천게시글 이름 최대 글자수는 딱 이정도6추천게시글 이름 최대 글자수는 딱 이정도6추천게시글 이름 최대 글자수는 딱 이정도61",
+        "name": "Startoo_official1",
+        "like": 0,
+        "review":11
+      },
+      {
+        "id": 2,
+        "img":"/img/main/img_list.png",
+        "txt": "추천게시글 이름 최대 글자수는 딱 이정도추천게시글 이름 최대 글자수는 딱 이정도6추천게시글 이름 최대 글자수는 딱 이정도6추천게시글 이름 최대 글자수는 딱 이정도62",
+        "name": "Startoo_official2",
+        "like": 1002,
+        "review":9
+      },
+      {
+        "id": 3,
+        "img":"/img/main/img_list.png",
+        "txt": "추천게시글 이름 최대 글자수는 딱 이정도추천게시글 이름 최대 글자수는 딱 이정도6추천게시글 이름 최대 글자수는 딱 이정도6추천게시글 이름 최대 글자수는 딱 이정도63",
+        "name": "Startoo_official3",
+        "like": 33,
+        "review":15
+      },
+      {
+        "id": 4,
+        "img":"/img/main/img_list.png",
+        "txt": "추천게시글 이름 최대 글자수는 딱 이정도추천게시글 이름 최대 글자수는 딱 이정도6추천게시글 이름 최대 글자수는 딱 이정도6추천게시글 이름 최대 글자수는 딱 이정도64",
+        "name": "Startoo_official4",
+        "like": 158,
+        "review":18
+      },
+      {
+        "id": 5,
+        "img":"/img/main/img_list.png",
+        "txt": "추천게시글 이름 최대 글자수는 딱 이정도추천게시글 이름 최대 글자수는 딱 이정도6추천게시글 이름 최대 글자수는 딱 이정도6추천게시글 이름 최대 글자수는 딱 이정도65",
+        "name": "Startoo_official5",
+        "like": 22,
+        "review":100
+      },
+      {
+        "id": 6,
+        "img":"/img/main/img_list.png",
+        "txt": "추천게시글 이름 최대 글자수는 딱 이정도추천게시글 이름 최대 글자수는 딱 이정도6추천게시글 이름 최대 글자수는 딱 이정도6추천게시글 이름 최대 글자수는 딱 이정도66",
+        "name": "Startoo_official6",
+        "like": 1000,
+        "review":158
+      },
+      {
+        "id": 7,
+        "img":"/img/main/img_list.png",
+        "txt": "추천게시글 이름 최대 글자수는 딱 이정도추천게시글 이름 최대 글자수는 딱 이정도6추천게시글 이름 최대 글자수는 딱 이정도6추천게시글 이름 최대 글자수는 딱 이정도67",
+        "name": "Startoo_official7",
+        "like": 100000,
+        "review":248
+      },
+      {
+        "id": 8,
+        "img":"/img/main/img_list.png",
+        "txt": "추천게시글 이름 최대 글자수는 딱 이정도추천게시글 이름 최대 글자수는 딱 이정도6추천게시글 이름 최대 글자수는 딱 이정도6추천게시글 이름 최대 글자수는 딱 이정도68",
+        "name": "Startoo_official8",
+        "like": 9,
+        "review":888
+      }
+
+    ]
+  }

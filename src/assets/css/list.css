@@ -59,7 +59,7 @@
 }
 .main-list .img-list ul {
   display: grid;
-  gap: 20px;
+  gap: 50px 20px;
   grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
   grid-template-rows: auto;
 }
@@ -107,6 +107,11 @@
   color: #ccc;
   font-weight: 700;
   letter-spacing: -1px;
+}
+.main-list .img-list ul li .tit-box .tit-btn button.follower.on, .main-list .img-list ul li .tit-box .tit-btn button.follower:hover {
+  color: #333;
+  border-color: #6EFF71;
+  background-color: #6EFF71;
 }
 .main-list .img-list ul li .tit-box .tit-btn button.tit-menu {
   width: 24px;

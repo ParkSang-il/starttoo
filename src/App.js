@@ -3,7 +3,7 @@ import Menu from './layout/Menu';
 import Footer from "./layout/Footer";
 import List from './pages/List';
 import {useRef, useEffect, useState} from 'react';
-import ModalView from './component/ModalLogin';
+import ModalLogin from './component/ModalLogin';
 
 
 function App() {
@@ -20,8 +20,8 @@ function App() {
       <Header login={login} notLogin={notLogin}/> {/*header*/}
       <Menu/>{/*타투메뉴*/}
       <List/>{/*메인리스트*/}
-      <ModalView login={login} notLogin={notLogin}/>{/*로그인모달*/}
-      <Footer/>{/*foorter*/}
+      {login !== false ? <ModalLogin login={login} notLogin={notLogin}/> : ''}{/*로그인모달*/}
+      <Footer login={login} notLogin={notLogin}/>{/*foorter*/}
     </div>
   );
 }

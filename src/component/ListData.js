@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import '../assets/css/list.css'
+import ModalBlock from './ModalBlock';
 
 export default function ListData(props) {
     var data =props.list; // 데이터 리스트
@@ -8,14 +9,20 @@ export default function ListData(props) {
     const dataSort = props.sort; // 최신순 인기순
 
     //좋아요
-    const dataLike = data.map(item => item.like); // 좋아요만 가져오기
-    const arrLike = new Array(dataLike); 
-    const [like,setLike] = useState(arrLike[0]); //좋아요
+    /*const dataLike = data.map(item => item.like); // 좋아요만 가져오기
+    const arrLike = new Array(dataLike);
+    const [like,setLike] = useState(arrLike[0]); //좋아요*/
+    const [like, setLike] = useState([]);
 
+    //팔로우
+    const [follower, setFollwer] = useState([]);
 
-    
+    //신고버튼
+    const [block, setBlock] = useState(false);
+
     //최신순 인기순
     dataSort === 1 ? data.sort((a,b)=>{return a.like > b.like ? -1 : a.like < b.like ? 1 : 0;}) : data.sort((a,b)=>{return a.id < b.id ? -1 : a.id > b.id ? 1 : 0;})
+   
     //리스트 반복
     const dataList = data.map((item, idx) => {
         return (
@@ -23,18 +30,28 @@ export default function ListData(props) {
             <div className='tit-box'>
                 <strong>{item.name}</strong>
                 <div className='tit-btn'>
-                    <button type='button'>팔로우</button>
-                    <button type='button' className='tit-menu'></button>
+                    <button type='button' className={'follower ' + (follower.includes(item) ? 'on':'')}
+                    onClick={()=>{
+                        !follower.includes(item) ? setFollwer((follower) => [...follower, item]) : setFollwer(follower.filter((button) => button !== item));
+                    }}
+                    >팔로우</button>
+                    <button type='button' className='tit-menu'
+                    onClick={()=>{
+                        setBlock(!block);
+                    }}>
+
+                    </button>
                 </div>
             </div>
             <div className='img-box'><img src={item.img} alt="" /></div>
             <div className='btn-box-wrap'>
                 <div className='btn-box txt-btn'>
-                    <button className='like' onClick={()=>{
-                        let likeCnt = [...like];
+                    <button className={'like' + (like.includes(item) ? ' on':'')} onClick={()=>{
+                        !like.includes(item) ? setLike((like) => [...like, item]) : setLike(like.filter((button) => button !== item));
+                       /* let likeCnt = [...like];
                         likeCnt[idx]++;
-                        setLike(likeCnt);
-                    }}>{like[idx]} 개</button>
+                        setLike(likeCnt);*/
+                    }}>{like.includes(item) ? item.like + 1 : item.like} 개</button>
                     <button className='review'>{item.review} 개</button>
                 </div>
                 <div className='btn-box'>
@@ -57,6 +74,7 @@ export default function ListData(props) {
             <ul>
                 {dataLength === 0 ? dataNone : dataList}
             </ul>
+            <ModalBlock open={block} close={setBlock}/>
         </div>
     );
 

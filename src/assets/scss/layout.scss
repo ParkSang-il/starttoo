@@ -126,19 +126,6 @@
             }
         }
 
-        /*//리스트
-        .list-menu{
-            .list-btn{
-                button{
-                    &.on,
-                    &:hover{
-                        color:#fff;
-                    }
-                }
-            }
-        }*/
-
-
         //footer
         footer{
             background:#1a1a1a;
@@ -166,18 +153,30 @@
             }
         }
 
-      /*  //리스트
-        .list-menu{
-            .list-btn{
-                button{
-                    &.on,
-                    &:hover{
-                        color:#6EFF71;
-                        font-weight:bold;
+        //팝업
+        .view-layer-wrap{
+            .in{
+                background:#fff;
+                .tit{
+                    border-bottom:1px solid #ddd;
+                    .close-btn{
+                        &::after,
+                        &::before{
+                            background:#555;
+                        }
+                    }
+                }
+                .con{
+                    .login-list{
+                        ul{
+                            li a.gogle{
+                                color:#333;
+                            }
+                        }
                     }
                 }
             }
-        }*/
+        }
 
         //footer
         footer{
@@ -505,55 +504,146 @@ footer{
 //레이어
 .view-layer-wrap{
     &.login{
-        .con{
-            padding:3%;
+        .in{
+            width:568px;
             border-radius:20px;
             text-align: center;
             background:#333;
-            h2{
-                img{
-                    width: 16em;
+            .tit{
+                position: relative;
+                @include flexCenter;
+                height:63px;
+                border-bottom:1px solid #f8f8f8;
+                h1{
+                    font-size:1.125em;
                 }
-                span{
-                    display: block;
-                    margin-top:10px;
-                    text-align: center;
-                    color:#ccc;
+                .close-btn{
+                    position: absolute;
+                    top: 50%;
+                    left:3%;
+                    width: 20px;
+                    height:20px;
+                    text-indent: -9999px;
+                    z-index: 9;
+                    transform: translateY(-50%);
+                    &::after,
+                    &::before{
+                        content:"";
+                        position:absolute;
+                        top: 0;
+                        left:15px;
+                        display: block;
+                        width: 1.5px;
+                        height:20px;
+                        border-radius:40px;
+                        background:#fff;
+                    }
+                    &::after{
+                       transform:rotate(45deg);
+                    }
+                    &::before{
+                        transform:rotate(-45deg);
+                    }
                 }
             }
-            .login-list{
-                padding-top:100px;
-                ul{
-                    li{
-                        min-width: 300px;
-                        width: 100%;
-                        height:52px;
-                        margin:0 auto 13px;
-                        a{
-                            display: block;
-                            line-height: 52px;
-                            border-radius:25px;
-                            color:#fff;
-                            font-weight:700;
-                            &.gogle{
-                                border: 1px solid #d9d9d9;
-                                line-height:50px;
-                                background:url($img_ico + 'ico_gogle.png')no-repeat 30px center;
-                            }
-                            &.kakao{
-                                color:#444;
-                                background:#FFEA12 url($img_ico + 'ico_kakao.png')no-repeat 30px center;
-                            }
-                            &.facebook{
-                                background:#1877F2 url($img_ico + 'ico_face.png')no-repeat 30px center;
-                            }
-                            &.naver{
-                                background:#00C73C url($img_ico + 'ico_naver.png')no-repeat 30px center;
+            .con{
+                padding:147px 3% 76px;
+                h2{
+                    img{
+                        width: 16em;
+                    }
+                    span{
+                        display: block;
+                        margin-top:10px;
+                        text-align: center;
+                        color:#ccc;
+                    }
+                }
+                .login-list{
+                    padding-top:140px;
+                    ul{
+                        li{
+                            width: 350px;
+                            height:52px;
+                            margin:0 auto 13px;
+                            a{
+                                display: block;
+                                line-height: 52px;
+                                border-radius:25px;
+                                color:#fff;
+                                font-weight:700;
+                                &.gogle{
+                                    border: 1px solid #d9d9d9;
+                                    line-height:50px;
+                                    background:url($img_ico + 'ico_gogle.png')no-repeat 30px center;
+                                }
+                                &.kakao{
+                                    color:#444;
+                                    background:#FFEA12 url($img_ico + 'ico_kakao.png')no-repeat 30px center;
+                                }
+                                &.facebook{
+                                    background:#1877F2 url($img_ico + 'ico_face.png')no-repeat 30px center;
+                                }
+                                &.naver{
+                                    background:#00C73C url($img_ico + 'ico_naver.png')no-repeat 30px center;
+                                }
                             }
                         }
                     }
                 }
             }
         }
+    }
+    &.block{
+        .in{
+            padding:3%;
+            border-radius:30px;
+            text-align: center;
+            color:#555;
+            background:#fff;
+            .tit h1{
+                font-size:1.125em;
+            }
+            .con p{
+                text-align: left;
+                width: 50%;
+            }
+          
+        }
+    }
+}
+
+@include MediaTablet{
+    .view-layer-wrap{
+        overflow: hidden;
+        touch-action: none;
+        &.login{
+            .in{
+                width: 100%;
+                height: 100%;
+                border-radius:0;
+                .con{
+                    @include flexCenter;
+                    flex-direction: column;
+                    width: 100%;
+                    height:100%;
+                    padding:3%;
+                    border-radius:0;
+                    .login-list{
+                        width: 100%;
+                        padding-top:10%;
+                        ul{
+                            li{
+                                min-width:300px;
+                                width:100%;
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+
+       
     }
 }

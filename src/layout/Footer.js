@@ -1,5 +1,8 @@
 import React from 'react'
-export default function Footer() {
+export default function Footer(props) {
+    function layerOpen(){
+        props.notLogin(!props.login);
+    }
   return (
     <footer>
         <div className="inner pc-footer">
@@ -30,7 +33,7 @@ export default function Footer() {
         <div className="inner mobile-footer">
             <button className='home'>home</button>
             <button className='menu'>menu</button>
-            <button className='my'>my</button>
+            <button className='my' onClick={layerOpen} >my</button>
         </div>
     </footer>
   )

@@ -1,11 +1,11 @@
 
-import React, {useState, useRef, useEffect} from 'react';
+import React, {useState,  useEffect} from 'react';
 import '../assets/css/list.css'
 import followerData from '../db/followerList'
 import ListData from './../component/ListData'
 import axios from 'axios'
 
-export default function List() {
+export default function List(props) {
     const [idx, setIdx] = useState(0);  //메뉴
     const [sortIdx, setSortIdx] = useState(0);
     const [feedList, setFeedList] = useState([])
@@ -13,7 +13,6 @@ export default function List() {
         {name:'추천', con:'recommendList',key:1},
         {name:'팔로잉', con:'followerList',key:2},
     ]
-
     useEffect(() => {
         async function fetchdata() {
             const { data } = await axios.get('/feedlist');
@@ -69,6 +68,7 @@ export default function List() {
                 <ListData list ={menuArr[idx].con === 'recommendList' ? feedList : followerData.followerList}
                           name ={menuArr[idx].name}
                           sort ={sortIdx}
+                          pop ={props.setPop}                
                 />
             </div>
             {/*<ModalView/>*/}

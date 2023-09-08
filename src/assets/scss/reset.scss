@@ -4,32 +4,32 @@
 //폰트
 $fontURL:'/public/font/';
 @mixin mixins-fontBasic($fontWeight,$fileName) {
-    font-family:'NanumSquare';
+    font-family:'Pretendard';
     font-style:normal;
     font-weight:$fontWeight;
     src: 
     url($fontURL+$fileName+'.otf');
 }
 @font-face {
-    @include mixins-fontBasic(300, 'NanumSquareL');
+    @include mixins-fontBasic(300, 'Pretendard-Thin');
 }
 @font-face {
-    @include mixins-fontBasic(400, 'NanumSquareL');
+    @include mixins-fontBasic(400, 'Pretendard-ExtraLight');
 }
 @font-face {
-    @include mixins-fontBasic(500, 'NanumSquareR');
+    @include mixins-fontBasic(500, 'Pretendard-Light');
 }
 @font-face {
-    @include mixins-fontBasic(600, 'NanumSquareR');
+    @include mixins-fontBasic(600, 'Pretendard-Regular');
 }
 @font-face {
-    @include mixins-fontBasic(700, 'NanumSquareB');
+    @include mixins-fontBasic(700, 'Pretendard-Medium');
 }
 @font-face {
-    @include mixins-fontBasic(800, 'NanumSquareB');
+    @include mixins-fontBasic(800, 'Pretendard-Bold');
 }
 @font-face {
-    @include mixins-fontBasic(900, 'NanumSquareEB');
+    @include mixins-fontBasic(900, 'Pretendard-ExtraBold');
 }
 
 
@@ -39,11 +39,11 @@ $fontURL:'/public/font/';
   margin:0;
   padding:0;
   color:inherit;
-  font-family:'NanumSquare','Malgun Gothic',Dotum,'Apple Gothic',sans-serif;
+  font-family:'Pretendard','Malgun Gothic',Dotum,'Apple Gothic',sans-serif;
   font-size:16px;
   box-sizing:border-box; 
   -webkit-tap-highlight-color:transparent !important;
-  font-weight:500;
+  font-weight:600;
 }
 li{
   list-style:none;

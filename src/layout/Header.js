@@ -1,8 +1,8 @@
-import {useState} from 'react'
+import React from 'react'
 
 export default function Header(props) {
     function layerOpen(){
-        props.notLogin(!props.login);
+        props.setPop('1');
     }
   return (
     <header>

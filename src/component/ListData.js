@@ -1,13 +1,12 @@
 import React,{useState} from 'react';
 import '../assets/css/list.css'
-import ModalBlock from './ModalBlock';
 
 export default function ListData(props) {
     var data =props.list; // 데이터 리스트
     const dataLength = data.length; //리스트 갯수
     const dataName = props.name; // 데이터이름
     const dataSort = props.sort; // 최신순 인기순
-
+   
     //좋아요
     /*const dataLike = data.map(item => item.like); // 좋아요만 가져오기
     const arrLike = new Array(dataLike);
@@ -17,8 +16,7 @@ export default function ListData(props) {
     //팔로우
     const [follower, setFollwer] = useState([]);
 
-    //신고버튼
-    const [block, setBlock] = useState(false);
+    
 
     //최신순 인기순
     dataSort === 1 ? data.sort((a,b)=>{return a.like > b.like ? -1 : a.like < b.like ? 1 : 0;}) : data.sort((a,b)=>{return a.id < b.id ? -1 : a.id > b.id ? 1 : 0;})
@@ -37,7 +35,7 @@ export default function ListData(props) {
                     >팔로우</button>
                     <button type='button' className='tit-menu'
                     onClick={()=>{
-                        setBlock(!block);
+                        props.pop('3');
                     }}>
 
                     </button>
@@ -74,7 +72,6 @@ export default function ListData(props) {
             <ul>
                 {dataLength === 0 ? dataNone : dataList}
             </ul>
-            <ModalBlock open={block} close={setBlock}/>
         </div>
     );
 

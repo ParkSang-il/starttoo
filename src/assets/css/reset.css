@@ -1,56 +1,56 @@
 @font-face {
-  font-family: "NanumSquare";
+  font-family: "Pretendard";
   font-style: normal;
   font-weight: 300;
-  src: url("/public/font/NanumSquareL.otf");
+  src: url("/public/font/Pretendard-Thin.otf");
 }
 @font-face {
-  font-family: "NanumSquare";
+  font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
-  src: url("/public/font/NanumSquareL.otf");
+  src: url("/public/font/Pretendard-ExtraLight.otf");
 }
 @font-face {
-  font-family: "NanumSquare";
+  font-family: "Pretendard";
   font-style: normal;
   font-weight: 500;
-  src: url("/public/font/NanumSquareR.otf");
+  src: url("/public/font/Pretendard-Light.otf");
 }
 @font-face {
-  font-family: "NanumSquare";
+  font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
-  src: url("/public/font/NanumSquareR.otf");
+  src: url("/public/font/Pretendard-Regular.otf");
 }
 @font-face {
-  font-family: "NanumSquare";
+  font-family: "Pretendard";
   font-style: normal;
   font-weight: 700;
-  src: url("/public/font/NanumSquareB.otf");
+  src: url("/public/font/Pretendard-Medium.otf");
 }
 @font-face {
-  font-family: "NanumSquare";
+  font-family: "Pretendard";
   font-style: normal;
   font-weight: 800;
-  src: url("/public/font/NanumSquareB.otf");
+  src: url("/public/font/Pretendard-Bold.otf");
 }
 @font-face {
-  font-family: "NanumSquare";
+  font-family: "Pretendard";
   font-style: normal;
   font-weight: 900;
-  src: url("/public/font/NanumSquareEB.otf");
+  src: url("/public/font/Pretendard-ExtraBold.otf");
 }
 /** reset **/
 * {
   margin: 0;
   padding: 0;
   color: inherit;
-  font-family: "NanumSquare", "Malgun Gothic", Dotum, "Apple Gothic", sans-serif;
+  font-family: "Pretendard", "Malgun Gothic", Dotum, "Apple Gothic", sans-serif;
   font-size: 16px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -webkit-tap-highlight-color: transparent !important;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 li {

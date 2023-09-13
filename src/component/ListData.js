@@ -16,7 +16,26 @@ export default function ListData(props) {
     //팔로우
     const [follower, setFollwer] = useState([]);
 
-    
+    //신고
+    const [block, setBlock] =useState();
+    //const [count, setCount] =useState(1);
+
+    const layerTxt = 
+            <div className="layer-txt">
+                <button className="close" onClick={()=>{
+                    setBlock(false);
+                    console.log(block);
+                    console.log('aa');
+                }}><span className="hidden" >닫기</span></button>
+                <button className="noti" onClick={()=>{
+                        props.pop('3');
+                    }}>신고하기</button>
+                <button className="block"onClick={()=>{
+                        props.pop('4');
+                    }}>차단하기</button>
+            </div>
+
+    console.log(layerTxt);
 
     //최신순 인기순
     dataSort === 1 ? data.sort((a,b)=>{return a.like > b.like ? -1 : a.like < b.like ? 1 : 0;}) : data.sort((a,b)=>{return a.id < b.id ? -1 : a.id > b.id ? 1 : 0;})
@@ -26,7 +45,7 @@ export default function ListData(props) {
         return (
           <li key={item.id}>
             <div className='tit-box'>
-                <strong>{item.name}</strong>
+                <strong><span className='profile'><img src="/img/ico/dark/ico_myname.png" alt="" /></span>{item.name}</strong>
                 <div className='tit-btn'>
                     <button type='button' className={'follower ' + (follower.includes(item) ? 'on':'')}
                     onClick={()=>{
@@ -35,11 +54,11 @@ export default function ListData(props) {
                     >팔로우</button>
                     <button type='button' className='tit-menu'
                     onClick={()=>{
-                        props.pop('3');
+                        setBlock(item.id);
                     }}>
-
                     </button>
                 </div>
+                {block === item.id ? layerTxt : ''}
             </div>
             <div className='img-box'><img src={item.img} alt="" /></div>
             <div className='btn-box-wrap'>

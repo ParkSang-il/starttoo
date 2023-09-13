@@ -15,8 +15,6 @@ export default function Profile() {
     {en:'illust', ko:'일러스트'},
     {en:'ani', ko:'애니메이션'}
   ];
-  const [check, setCheck] = useState(false);
-  console.log(checkBoxList.length);
   return (
     <div className='con'>
         <div className='profile-form'>
@@ -29,7 +27,7 @@ export default function Profile() {
                         <span className="txt-length"><span>8</span>/20</span>
                     </div>
                     <p className='ps-txt lang on'>한글 / 영문 / 숫자/ 특수기호 (_),(.) 로 설정</p>
-                    <p className='ps-txt duplication on'>사용 가능한 닉네임</p>
+                    <p className='ps-txt duplication'>사용 가능한 닉네임</p>
                     <ul className='basic-list'> 
                         <li>닉네임은 30일 내 최대 3번까지 수정 가능합니다. (0/3)</li>
                         <li>닉네임 변경 시 이전 닉네임은 다시 사용하실 수 없습니다.</li>
@@ -39,8 +37,8 @@ export default function Profile() {
                     <strong>좋아하는 타투를 3개 이상 선택하세요 <span>* 최대 5개</span></strong>
                     <div className='check-box list'>
                         {checkBoxList.map((item,idx)=>(
-                            <div>
-                                <input type="checkbox" id={item.en} key={idx}/>
+                            <div key={idx}>
+                                <input type="checkbox" id={item.en} />
                                 <label htmlFor={item.en}>{item.ko}</label>
                             </div>
                         ))}
@@ -71,6 +69,7 @@ export default function Profile() {
                     </div>
                 </li>
             </ul>
+            <button type="submit">가입하기</button>
         </div>
     </div>
   )

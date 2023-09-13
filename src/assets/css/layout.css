@@ -9,6 +9,23 @@
 #wrap.dark {
   color: #fff;
   background-color: #222;
+  /*  .menu-tatto{
+        ul li{
+            &.arrow.bot{
+                .tit{
+                    background: url($img_ico+$theme+'/ico_arrow_bot.png')no-repeat right center;
+                }
+            }
+        }
+        .menu-btn button{
+            &.menu{
+                background:url($img_ico+$theme+'/ico_menu.png')no-repeat right center;
+            }
+            &.notice{
+                background:url($img_ico+ $theme+'/ico_noti.png')no-repeat 0 0;
+            }
+        }
+    }*/
 }
 #wrap.dark header .search-bar button {
   background: url("/public/img/ico/dark/ico_search.png") no-repeat 0 0;
@@ -18,18 +35,6 @@
 }
 #wrap.dark header .ico-btn.noti {
   background: url("/public/img/ico/dark/ico_noti.png") no-repeat 0 0;
-}
-#wrap.dark .menu-tatto ul li.arrow.bot .tit {
-  background: url("/public/img/ico/dark/ico_arrow_bot.png") no-repeat right center;
-}
-#wrap.dark .menu-tatto .menu-btn button.menu {
-  background: url("/public/img/ico/dark/ico_menu.png") no-repeat right center;
-}
-#wrap.dark .menu-tatto .menu-btn button.notice {
-  background: url("/public/img/ico/dark/ico_noti.png") no-repeat 0 0;
-}
-#wrap.dark .img-list .tit-box strong {
-  background-image: url("/public/img/ico/dark/ico_myname.png");
 }
 #wrap.dark .img-list .tit-box .tit-btn button.tit-menu {
   background-image: url("/public/img/ico/dark/ico_more.png");
@@ -61,6 +66,23 @@
 #wrap.light {
   color: #333;
   background-color: #fff;
+  /*  .menu-tatto{
+        ul li{
+            &.arrow.bot{
+                .tit{
+                    background: url($img_ico+$theme+'/ico_arrow_bot.png')no-repeat right center;
+                }
+            }
+        }
+        .menu-btn button{
+            &.menu{
+                background:url($img_ico+$theme+'/ico_menu.png')no-repeat right center;
+            }
+            &.notice{
+                background:url($img_ico+ $theme+'/ico_noti.png')no-repeat 0 0;
+            }
+        }
+    }*/
 }
 #wrap.light header .search-bar button {
   background: url("/public/img/ico/light/ico_search.png") no-repeat 0 0;
@@ -70,18 +92,6 @@
 }
 #wrap.light header .ico-btn.noti {
   background: url("/public/img/ico/light/ico_noti.png") no-repeat 0 0;
-}
-#wrap.light .menu-tatto ul li.arrow.bot .tit {
-  background: url("/public/img/ico/light/ico_arrow_bot.png") no-repeat right center;
-}
-#wrap.light .menu-tatto .menu-btn button.menu {
-  background: url("/public/img/ico/light/ico_menu.png") no-repeat right center;
-}
-#wrap.light .menu-tatto .menu-btn button.notice {
-  background: url("/public/img/ico/light/ico_noti.png") no-repeat 0 0;
-}
-#wrap.light .img-list .tit-box strong {
-  background-image: url("/public/img/ico/light/ico_myname.png");
 }
 #wrap.light .img-list .tit-box .tit-btn button.tit-menu {
   background-image: url("/public/img/ico/light/ico_more.png");
@@ -117,9 +127,6 @@
   background-image: -webkit-gradient(linear, left top, left bottom, from(#222), to(#222)), -webkit-gradient(linear, left top, right top, from(#6EFF71), to(#3FD1FD));
   background-image: linear-gradient(#222, #222), linear-gradient(to right, #6EFF71, #3FD1FD);
 }
-#wrap.dark .menu-tatto ul li .tit {
-  color: #c3c3c3;
-}
 #wrap.dark footer {
   background: #1a1a1a;
 }
@@ -130,9 +137,6 @@
 #wrap.light .header-btn .upload {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff)), -webkit-gradient(linear, left top, right top, from(#6EFF71), to(#3FD1FD));
   background-image: linear-gradient(#fff, #fff), linear-gradient(to right, #6EFF71, #3FD1FD);
-}
-#wrap.light .menu-tatto ul li .tit {
-  color: #555;
 }
 #wrap.light .view-layer-wrap .in {
   background: #fff;
@@ -151,7 +155,8 @@
 }
 
 header {
-  padding-top: 24px;
+  padding: 16px 0 14px;
+  border-bottom: 1px solid #333;
 }
 header .inner {
   display: -webkit-box;
@@ -163,6 +168,7 @@ header .inner {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: 3%;
 }
 header .logo span {
   display: block;
@@ -173,14 +179,12 @@ header .logo span {
 header .search-bar {
   width: 704px;
   position: relative;
-  margin: 0 3%;
 }
 header .search-bar input {
   width: 100%;
-  height: 70px;
+  height: 46px;
   padding-left: 60px;
   border-radius: 35px;
-  font-size: 1.5em;
   border: 1px solid #444;
 }
 header .search-bar button {
@@ -204,11 +208,11 @@ header .header-btn {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 40px;
+  gap: 15px;
 }
 header .header-btn .upload {
   width: 280px;
-  height: 60px;
+  height: 46px;
   border: 2px solid transparent;
   border-radius: 26px;
   background-color: transparent;
@@ -246,78 +250,38 @@ header .header-btn .upload span strong {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 36px;
+  gap: 15px;
 }
 .menu-tatto ul li {
-  width: 80px;
-}
-.menu-tatto ul li.arrow.bot a .bg-img {
-  background-image: none;
-}
-.menu-tatto ul li.arrow.bot a .tit {
-  padding-left: 5px;
-  text-align: left;
+  width: 74px;
+  text-align: center;
 }
 .menu-tatto ul li a {
   display: block;
-  -webkit-perspective: 1100px;
-          perspective: 1100px;
+  height: 74px;
+  line-height: 74px;
+  border-radius: 20px;
+  background: url("/public/img/common/img_menu.png") no-repeat 0 0;
 }
-.menu-tatto ul li a .bg-img {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 0;
-  padding-top: 100%;
-  margin-bottom: 8px;
-  border-radius: 30px;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
-}
-.menu-tatto ul li a .bg-img > span {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 30px;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-}
-.menu-tatto ul li a .bg-img > span.front {
-  background: #282828 url(/public/img/common/img_menu.png) no-repeat 0 0;
-  background-size: contain;
-}
-.menu-tatto ul li a .bg-img > span.back {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-weight: 700;
+.menu-tatto ul li a:hover {
+  color: #222;
+  font-weight: 800;
   background: #6EFF71;
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
-  color: #111;
 }
-.menu-tatto ul li a .tit {
-  display: block;
-  font-weight: 700;
-  background-image: none;
-  text-align: center;
+.menu-tatto ul li.normal a {
+  background: rgba(85, 85, 85, 0.5);
+  border: 1px solid #555;
 }
-.menu-tatto ul li:hover .bg-img {
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
+.menu-tatto ul li.normal a:hover {
+  color: #fff;
 }
-.menu-tatto ul li:hover .tit {
-  display: none;
+.menu-tatto ul li.arrow a span {
+  background: url("");
+}
+.menu-tatto ul li.select a {
+  background-image: url("/public/img/common/ico_menu.png");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 footer {
@@ -608,32 +572,6 @@ footer .inner.mobile-footer {
 .view-layer-wrap .in.login .con .login-list ul li a.naver {
   background: #00C73C url("/public/img/ico/ico_naver.png") no-repeat 30px center;
 }
-.view-layer-wrap .in.block {
-  width: 700px;
-  padding: 20px;
-  color: #555;
-  background: #fff;
-}
-.view-layer-wrap .in.block .tit {
-  border-bottom: 1px solid #333;
-  height: 40px;
-}
-.view-layer-wrap .in.block .tit .close-btn::after, .view-layer-wrap .in.block .tit .close-btn::before {
-  background: #333;
-}
-.view-layer-wrap .in.block .con {
-  padding-top: 20px;
-  text-align: left;
-}
-.view-layer-wrap .in.block .con .select-box {
-  padding-top: 20px;
-}
-.view-layer-wrap .in.block .con .select-box select {
-  width: 100%;
-  height: 40px;
-  padding: 0 15px;
-  border-radius: 10px;
-}
 .view-layer-wrap .in.profile {
   width: 568px;
 }
@@ -730,6 +668,49 @@ footer .inner.mobile-footer {
   clear: both;
   content: "·";
   display: block;
+}
+.view-layer-wrap .in.profile .con .profile-form button {
+  width: 300px;
+  height: 56px;
+  border-radius: 50px;
+  font-size: 1.25em;
+  color: #222;
+  font-weight: 800;
+  background: #6eff71;
+}
+.view-layer-wrap .in.block {
+  width: 614px;
+}
+.view-layer-wrap .in.block .con .con-in {
+  padding: 3%;
+}
+.view-layer-wrap .in.block .con .con-in p {
+  padding-bottom: 3%;
+}
+.view-layer-wrap .in.block .con .con-in select {
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  border-radius: 10px;
+  color: #555;
+}
+.view-layer-wrap .in.block .con .btn-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-top: 1px solid #111;
+}
+.view-layer-wrap .in.block .con .btn-wrap button {
+  width: 100%;
+  height: 50px;
+  border-right: 1px solid #111;
+}
+.view-layer-wrap .in.block .con .btn-wrap button.t1 {
+  color: #6EFF71;
+  border-right: 0;
 }
 
 .check-box ul {

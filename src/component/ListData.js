@@ -30,7 +30,7 @@ export default function ListData(props) {
                 <button className="noti" onClick={()=>{
                         props.pop('3');
                     }}>신고하기</button>
-                <button className="block"onClick={()=>{
+                <button className="block" onClick={()=>{
                         props.pop('4');
                     }}>차단하기</button>
             </div>

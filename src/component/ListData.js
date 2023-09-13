@@ -30,7 +30,7 @@ export default function ListData(props) {
                 <button className="noti" onClick={()=>{
                         props.pop('3');
                     }}>신고하기</button>
-                <button className="block" onClick={()=>{
+                <button className="block"onClick={()=>{
                         props.pop('4');
                     }}>차단하기</button>
             </div>
@@ -41,7 +41,7 @@ export default function ListData(props) {
     dataSort === 1 ? data.sort((a,b)=>{return a.like > b.like ? -1 : a.like < b.like ? 1 : 0;}) : data.sort((a,b)=>{return a.idx < b.idx ? -1 : a.idx > b.idx ? 1 : 0;})
    
     //리스트 반복
-    const dataList = data.map((item, idx) => {
+    const dataList = data.map((item, id) => {
         return (
           <li key={item.idx}>
             <div className='tit-box'>

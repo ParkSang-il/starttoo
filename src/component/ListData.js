@@ -38,12 +38,12 @@ export default function ListData(props) {
     console.log(layerTxt);
 
     //최신순 인기순
-    dataSort === 1 ? data.sort((a,b)=>{return a.like > b.like ? -1 : a.like < b.like ? 1 : 0;}) : data.sort((a,b)=>{return a.id < b.id ? -1 : a.id > b.id ? 1 : 0;})
+    dataSort === 1 ? data.sort((a,b)=>{return a.like > b.like ? -1 : a.like < b.like ? 1 : 0;}) : data.sort((a,b)=>{return a.idx < b.idx ? -1 : a.idx > b.idx ? 1 : 0;})
    
     //리스트 반복
     const dataList = data.map((item, idx) => {
         return (
-          <li key={item.id}>
+          <li key={item.idx}>
             <div className='tit-box'>
                 <strong><span className='profile'><img src="/img/ico/dark/ico_myname.png" alt="" /></span>{item.name}</strong>
                 <div className='tit-btn'>
@@ -54,11 +54,11 @@ export default function ListData(props) {
                     >팔로우</button>
                     <button type='button' className='tit-menu'
                     onClick={()=>{
-                        setBlock(item.id);
+                        setBlock(item.idx);
                     }}>
                     </button>
                 </div>
-                {block === item.id ? layerTxt : ''}
+                {block === item.idx ? layerTxt : ''}
             </div>
             <div className='img-box'><img src={item.img_path} alt="" /></div>
             <div className='btn-box-wrap'>

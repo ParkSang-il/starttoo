@@ -60,7 +60,7 @@ export default function ListData(props) {
                 </div>
                 {block === item.id ? layerTxt : ''}
             </div>
-            <div className='img-box'><img src={item.img} alt="" /></div>
+            <div className='img-box'><img src={item.img_path} alt="" /></div>
             <div className='btn-box-wrap'>
                 <div className='btn-box txt-btn'>
                     <button className={'like' + (like.includes(item) ? ' on':'')} onClick={()=>{
@@ -77,7 +77,7 @@ export default function ListData(props) {
                 </div>
             </div>
             <div className='txt-box'>
-                <p>{item.txt}</p>
+                <p>{item.content}</p>
                 <button type='button'>더보기</button>
             </div>
           </li>

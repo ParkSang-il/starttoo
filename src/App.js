@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     //console.log(widthInfo.current.offsetWidth);
   });
-  const [pop, setPop] = useState('0')//모달 종류
+  const [pop, setPop] = useState('0');//모달 종류
   return (
     <div id="wrap" className="dark" ref={widthInfo}>
       <Header pop={pop} setPop={setPop}/> {/*header*/}

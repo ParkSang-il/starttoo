@@ -9,6 +9,7 @@
     height: auto;
     min-height:100vh;
     padding-bottom:79px;
+    
     @each $theme in dark, light{
         &.#{$theme}{
             @include theme($theme);
@@ -340,11 +341,11 @@ footer{
     header{
         padding:3% 0;
         .logo{
-            width: 30%;
+            //width: 30%;
             min-width:130px;
-            img{
+            /*img{
                 width: 100%;
-            }
+            }*/
             span{
                 display: none;
             }
@@ -354,6 +355,7 @@ footer{
         }
         .search-bar{
             margin:0 0 0 3%;
+            width: 100%;
             input{
                 height:50px;
                 font-size:1.286em;
@@ -362,11 +364,11 @@ footer{
     }
 
     .menu-tatto{
-        overflow:scroll;
-        @include flexBetween;
-        padding:3% 3% 3% 140px;
-        background:#333;
+        overflow-x:scroll;
+        @include flexCenter;
+        padding:3%;
         .menu-btn{
+           
            position: absolute;
            left:0;
            @include flexCenter;
@@ -374,6 +376,7 @@ footer{
            padding-left:3%;
            z-index: 2;
            background:#333;
+           display: none;
             button{
                width:40px;
                height:40px;
@@ -403,7 +406,7 @@ footer{
 
                 &.arrow{
                     border-radius:10px;
-                    background-color:#6eff71;
+                    //background-color:#6eff71;
                 }
             }
         }
@@ -445,8 +448,9 @@ footer{
 
 @include MediaMobile{
     .menu-tatto{
-        padding:3% 3% 3% 90px;
+        padding:3%;
         .menu-btn{
+            display: none;
             button{
                 width: 30px;
                 height:30px;

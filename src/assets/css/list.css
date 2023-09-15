@@ -59,7 +59,7 @@
 }
 .main-list .img-list ul {
   display: grid;
-  gap: 50px 20px;
+  gap: 27px 27px;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   grid-template-rows: auto;
 }

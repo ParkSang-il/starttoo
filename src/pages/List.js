@@ -9,13 +9,19 @@ export default function List(props) {
     const [idx, setIdx] = useState(0);  //메뉴
     const [sortIdx, setSortIdx] = useState(0);
     const [feedList, setFeedList] = useState([])
+    const [feedOrder, setFeedOrder] = useState('2');
     const menuArr =[
         {name:'추천', con:'recommendList',key:1},
         {name:'팔로잉', con:'followerList',key:2},
     ]
     useEffect(() => {
         async function fetchdata() {
-            const { data } = await axios.get('/feedlist');
+            const { data } = await axios.get('/feed/feedlist',
+                {params : {
+                        type: 'recommend',
+                        order: feedOrder
+                    }
+                });
             console.log(data);
             setFeedList(data.recommendList);
         }

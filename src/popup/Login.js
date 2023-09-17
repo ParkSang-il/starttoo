@@ -1,8 +1,8 @@
 import React from 'react'
-
+import GoogleLoginButton from './../component/GoogleLogin'
 export default function Login(props) {
-    console.log(props.pop);
-    console.log(props.setpop);
+    // console.log(props.pop);
+    // console.log(props.setpop);
   return (
     <div className='con'>
         <h2 className='logo'>
@@ -11,9 +11,7 @@ export default function Login(props) {
         </h2>
         <div className='login-list'>
             <ul>
-                <li><a href="#;" className='gogle' onClick={()=>{
-                        props.pop('2');
-                    }}>구글로 계속하기</a></li>
+                <GoogleLoginButton pop={props.pop} setPop={props.setPop}></GoogleLoginButton>
                 <li><a href="https://www.kakao.com" target='blank_' className='kakao'>카카오로 계속하기</a></li>
                 <li><a href="https://www.facebook.com" target='blank_' className='facebook'>페이스북으로 계속하기</a></li>
                 <li><a href="https://www.naver.com" target='blank_' className='naver'>네이버로 계속하기</a></li>

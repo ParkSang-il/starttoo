@@ -9,34 +9,59 @@ export default function List(props) {
     const [idx, setIdx] = useState(0);  //메뉴
     const [sortIdx, setSortIdx] = useState(0);
     const [feedList, setFeedList] = useState([])
-    const [feedOrder, setFeedOrder] = useState('2');
+    const [feedOrder, setFeedOrder] = useState('1');
+    const [listType, setListType] = useState('recommendList');
     const menuArr =[
         {name:'추천', con:'recommendList',key:1},
         {name:'팔로잉', con:'followerList',key:2},
     ]
     useEffect(() => {
-        async function fetchdata() {
+        async function feedListData() {
             const { data } = await axios.get('/feed/feedlist',
                 {params : {
-                        type: 'recommend',
+                        type: listType,
                         order: feedOrder
                     }
                 });
             console.log(data);
             setFeedList(data.recommendList);
         }
-        fetchdata();
+        feedListData();
     }, []);
 
-    const selectMenuHandler = (index) => {
+    const selectMenuHandler = (index, con) => {
+        setListType(con);
+        async function feedListData() {
+            const { data } = await axios.get('/feed/feedlist',
+                {params : {
+                        type: listType,
+                        order: feedOrder
+                    }
+                });
+            console.log(data);
+            setFeedList(data.recommendList);
+        }
+        feedListData();
         setIdx(index);
     };
     const sortArr = [
-        {key:0,name:'최신순'},
-        {key:1,name:'인기순'},
+        {key:0,name:'최신순', orderType:'1'},
+        {key:1,name:'인기순', orderType:'2'}
     ]
 
-    const sortHandler = (index)=>{
+    const sortHandler = (index, orderType)=>{
+        setFeedOrder(orderType);
+        async function feedListData() {
+            const { data } = await axios.get('/feed/feedlist',
+                {params : {
+                        type: listType,
+                        order: feedOrder
+                    }
+                });
+            console.log(data);
+            setFeedList(data.recommendList);
+        }
+        feedListData();
         setSortIdx(index);
     }
 
@@ -50,7 +75,7 @@ export default function List(props) {
                                 <button type="button" 
                                 key={ele.key} 
                                 className={idx === index ? 'on' :''}
-                                onClick={()=> selectMenuHandler(index)}
+                                onClick={()=> selectMenuHandler(index, ele.con)}
                                 >
                                     {ele.name}
                                 </button>
@@ -63,7 +88,9 @@ export default function List(props) {
                                 <button type="button"
                                 key={ele.key}
                                 className={sortIdx === index ? 'on':''}
-                                onClick={()=> sortHandler(index)}
+                                onClick={
+                                    ()=> sortHandler(index, ele.orderType)
+                                }
                                 >
                                 {ele.name}
                                 </button>
@@ -71,7 +98,7 @@ export default function List(props) {
                         })}
                     </div>
                 </div>
-                <ListData list ={menuArr[idx].con === 'recommendList' ? feedList : followerData.followerList}
+                <ListData list ={feedList}
                           name ={menuArr[idx].name}
                           sort ={sortIdx}
                           pop ={props.setPop}                

@@ -1,7 +1,8 @@
 import React from 'react'
 export default function Footer(props) {
+    console.log(props);
     function layerOpen(){
-        props.notLogin(!props.login);
+        props.setPop('1');
     }
   return (
     <footer>

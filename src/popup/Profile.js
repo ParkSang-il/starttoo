@@ -1,20 +1,33 @@
-import React, { useState } from 'react'
+import React, {useEffect, useState} from 'react'
+import axios from "axios";
 
 export default function Profile() {
-  const checkBoxList =[
-    {en:'watercolor',ko:'수채화 타투'},
-    {en:'irezumi', ko:'이레즈미'},
-    {en:'oldschool', ko:'올드스쿨'},
-    {en:'drawing', ko:'드로잉/낙서'},
-    {en:'lettering', ko:'레터링'},
-    {en:'mini', ko:'미니타투'},
-    {en:'black', ko:'블랙워크'},
-    {en:'orientalpainting', ko:'동양화/수채화'},
-    {en:'flower', ko:'꽃/식물'},
-    {en:'newschool', ko:'뉴스쿨'},
-    {en:'illust', ko:'일러스트'},
-    {en:'ani', ko:'애니메이션'}
-  ];
+    const [checkBoxList, setCheckBoxList] = useState([]);
+  //   const checkBoxList = [
+  //   {en:'watercolor',ko:'수채화 타투'},
+  //   {en:'irezumi', ko:'이레즈미'},
+  //   {en:'oldschool', ko:'올드스쿨'},
+  //   {en:'drawing', ko:'드로잉/낙서'},
+  //   {en:'lettering', ko:'레터링'},
+  //   {en:'mini', ko:'미니타투'},
+  //   {en:'black', ko:'블랙워크'},
+  //   {en:'orientalpainting', ko:'동양화/수채화'},
+  //   {en:'flower', ko:'꽃/식물'},
+  //   {en:'newschool', ko:'뉴스쿨'},
+  //   {en:'illust', ko:'일러스트'},
+  //   {en:'ani', ko:'애니메이션'}
+  // ];
+
+    useEffect(() => {
+        async function tattooThemaList() {
+            const { data } = await axios.get('/feed/tattoo_thema',
+                {});
+            console.log(data);
+            setCheckBoxList(data);
+        }
+        tattooThemaList();
+    }, []);
+
   return (
     <div className='con'>
         <div className='profile-form'>
